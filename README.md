@@ -1,3 +1,3 @@
-# MachineLearning
+# DataScience
 
-This repository contains my Machine Learning projects and programs written while learining this topic.
+This repository contains my Data Science projects and programs written while learining this topic.
