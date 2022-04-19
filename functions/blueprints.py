@@ -1,6 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
-
+import numpy as np
+import pandas as pd
+from sklearn.linear_model import *
 
 def plot_decision_regions(X, y, classifier, test_idx=None, resolution=0.02):
 
