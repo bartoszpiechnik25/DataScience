@@ -23,6 +23,6 @@ class LoadData:
 
 
 if __name__ == '__main__':
-    load = LoadData('titanics_train.csv')
+    load = LoadData('titanic_train.csv')
     df = load.create_data()
     df.head()

@@ -3,3 +3,4 @@
 data/
 Colab Notebooks/
 .idea/
+functions/titanic_train.csv
