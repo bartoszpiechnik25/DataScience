@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from sklearn.linear_model import *
+import seaborn as sns
 
 def plot_decision_regions(X, y, classifier, test_idx=None, resolution=0.02):
 
@@ -48,3 +49,6 @@ def plot_decision_regions(X, y, classifier, test_idx=None, resolution=0.02):
                     s=100, 
                     label='Test set')
 
+
+def plot_missing_data(dataset):
+    sns.heatmap(dataset.isnull(), yticklabels=False, cbar=False, cmap='viridis')
