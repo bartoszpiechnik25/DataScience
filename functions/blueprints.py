@@ -53,3 +53,4 @@ def plot_decision_regions(X, y, classifier, test_idx=None, resolution=0.02):
 def plot_missing_data(dataset):
     plt.figure(figsize=(11,7), dpi=150)
     sns.heatmap(dataset.isnull(), yticklabels=False, cbar=False, cmap='viridis')
+    plt.show()

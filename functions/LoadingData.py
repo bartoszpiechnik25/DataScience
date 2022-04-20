@@ -1,17 +1,19 @@
 import pandas as pd
 from blueprints import plot_missing_data
+import sys
 
 
 class LoadData:
     def __init__(self, path):
         try:
-            self.df = pd.read_csv(path)
             self.path = path
+            self.df = pd.read_csv(path)
         except:
             print(f'Specified path -> {self.path} does not exists')
+            sys.exit(-1)
 
     def create_data(self):
-        print(f'{self.df.info()}\n Shape of DataFrame is {self.df.shape}\n')
+        print(f'{self.df.info()}\nShape of DataFrame is {self.df.shape}\n')
         print(f'Head of DataFrame:\n{self.df.head()}')
         print(f'Dataset statistics:\n{self.df.describe()}')
         print(f'Number of NaN values in DataFrame:\n{self.df.isna().sum()}')
@@ -20,3 +22,7 @@ class LoadData:
         return self.df
 
 
+if __name__ == '__main__':
+    load = LoadData('titanics_train.csv')
+    df = load.create_data()
+    df.head()
