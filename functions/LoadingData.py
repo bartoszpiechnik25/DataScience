@@ -1,5 +1,5 @@
 import pandas as pd
-from blueprints import plot_missing_data
+from functions.blueprints import plot_missing_data
 import sys
 
 
@@ -7,35 +7,35 @@ class LoadData:
     """
     Reads your csv data from specified path and load it to
     pandas.DataFrame object.
-    ---------------------------------------------------------
+    ---------------------------------------------------------\n
     If path does not exist, or you were given invalid name it
-    will return -1 and stop reading process.
+    will return -1.
     ---------------------------------------------------------"""
     def __init__(self, path):
 
         try:
             self.path = path
             self.df = pd.read_csv(path)
-        except:
+        except FileNotFoundError:
             print(f'Specified path -> {self.path} does not exists')
             sys.exit(-1)
 
     def create_data(self):
         """
-    This function will summarize your dataset and display:
-    ======================================================
-    info: df.info()
-    shape: df.shape
-    head: df.head()
-    describe: df.describe()
-    number of NaN values: df.isna().sum()
-    plot number of NaN on heatmap: sns.heatmap()
-    number of duplicates: df.duplicated().sum()
-    ======================================================"""
+    This function will summarize your dataset and display:\n
+    ------------------------------------------------------
+    info: df.info()\n
+    shape: df.shape\n
+    head: df.head()\n
+    describe: df.describe()\n
+    number of NaN values: df.isna().sum()\n
+    plot number of NaN on heatmap: sns.heatmap()\n
+    number of duplicates: df.duplicated().sum()\n
+    ------------------------------------------------------"""
         print(f'{self.df.info()}\nShape of DataFrame is {self.df.shape}\n')
-        print(f'Head of DataFrame:\n{self.df.head()}')
-        print(f'Dataset statistics:\n{self.df.describe()}')
-        print(f'Number of NaN values in DataFrame:\n{self.df.isna().sum()}')
+        print(f'Head of DataFrame:\n{self.df.head()}\n')
+        print(f'Dataset statistics:\n{self.df.describe()}\n')
+        print(f'Number of NaN values in DataFrame:\n{self.df.isna().sum()}\n')
         plot_missing_data(self.df)
         print(f'Number of duplicates in DataFrame: {self.df.duplicated().sum()}')
         return self.df
