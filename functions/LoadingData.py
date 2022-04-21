@@ -7,7 +7,7 @@ class LoadData:
     """
     Reads your csv data from specified path and load it to
     pandas.DataFrame object.
-    ---------------------------------------------------------\n
+    ---------------------------------------------------------
     If path does not exist, or you were given invalid name it
     will return -1.
     ---------------------------------------------------------"""
@@ -22,15 +22,15 @@ class LoadData:
 
     def create_data(self):
         """
-    This function will summarize your dataset and display:\n
+    This function will summarize your dataset and display:
     ------------------------------------------------------
-    info: df.info()\n
-    shape: df.shape\n
-    head: df.head()\n
-    describe: df.describe()\n
-    number of NaN values: df.isna().sum()\n
-    plot number of NaN on heatmap: sns.heatmap()\n
-    number of duplicates: df.duplicated().sum()\n
+    info: df.info()
+    shape: df.shape
+    head: df.head()
+    describe: df.describe()
+    number of NaN values: df.isna().sum()
+    plot number of NaN on heatmap: sns.heatmap()
+    number of duplicates: df.duplicated().sum()
     ------------------------------------------------------"""
         print(f'{self.df.info()}\nShape of DataFrame is {self.df.shape}\n')
         print(f'Head of DataFrame:\n{self.df.head()}\n')
