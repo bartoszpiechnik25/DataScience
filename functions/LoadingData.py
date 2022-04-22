@@ -1,4 +1,5 @@
 import pandas as pd
+from IPython.display import display
 from functions.blueprints import plot_missing_data
 import sys
 
@@ -32,12 +33,18 @@ class LoadData:
     plot number of NaN on heatmap: sns.heatmap()
     number of duplicates: df.duplicated().sum()
     ------------------------------------------------------"""
-        print(f'{self.df.info()}\nShape of DataFrame is {self.df.shape}\n')
-        print(f'Head of DataFrame:\n{self.df.head()}\n')
-        print(f'Dataset statistics:\n{self.df.describe()}\n')
-        print(f'Number of NaN values in DataFrame:\n{self.df.isna().sum()}\n')
+        print(f'Shape of DataFrame is {self.df.shape}\n')
+        display(self.df.info())
+        print('\nHead of DataFrame:')
+        display(self.df.head())
+        print('\nDataset statistics:')
+        display(self.df.describe())
+        print('\nNumber of NaN values in DataFrame:')
+        display(self.df.isna().sum())
+        print('\nNumber of duplicates in DataFrame:')
+        display(self.df.duplicated().sum())
+        print('\nVisualisation of missing values in data set:')
         plot_missing_data(self.df)
-        print(f'Number of duplicates in DataFrame: {self.df.duplicated().sum()}')
         return self.df
 
 
