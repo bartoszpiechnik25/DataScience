@@ -15,10 +15,10 @@ class LoadData:
     def __init__(self, path):
 
         try:
-            self.path = path
-            self.df = pd.read_csv(path)
+            self.__path = path
+            self.__df = pd.read_csv(path)
         except FileNotFoundError:
-            print(f'Specified path -> {self.path} does not exists')
+            print(f'Specified path -> {self.__path} does not exists')
             sys.exit(-1)
 
     def create_data(self):
@@ -33,19 +33,19 @@ class LoadData:
     plot number of NaN on heatmap: sns.heatmap()
     number of duplicates: df.duplicated().sum()
     ------------------------------------------------------"""
-        print(f'Shape of DataFrame is {self.df.shape}\n')
-        display(self.df.info())
+        print(f'Shape of DataFrame is {self.__df.shape}\n')
+        display(self.__df.info())
         print('\nHead of DataFrame:')
-        display(self.df.head())
+        display(self.__df.head())
         print('\nDataset statistics:')
-        display(self.df.describe())
+        display(self.__df.describe())
         print('\nNumber of NaN values in DataFrame:')
-        display(self.df.isna().sum())
+        display(self.__df.isna().sum())
         print('\nNumber of duplicates in DataFrame:')
-        display(self.df.duplicated().sum())
+        display(self.__df.duplicated().sum())
         print('\nVisualisation of missing values in data set:')
-        plot_missing_data(self.df)
-        return self.df
+        plot_missing_data(self.__df)
+        return self.__df
 
 
 if __name__ == '__main__':
