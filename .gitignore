@@ -1,5 +1,6 @@
 ..gitignore.swp
 .ipynb_checkpoints/
 .idea/
+.vscode/
 functions/titanic_train.csv
 __pycache__/
